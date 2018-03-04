@@ -6,6 +6,9 @@ const fs = require ('fs');
 // For template rendering
 const hbs = require ('hbs');
 
+// For Heroku - will take automatic port
+const port = process.env.PORT || 3000;
+
 var app = express ();
 
 app.set ('view engine', 'hbs');
@@ -70,4 +73,6 @@ app.get ('/bad', (req, res) => {
     });
 });
 
-app.listen (3000);
+app.listen (port, () => {
+    console.log (`Server is up on ${ port }`);
+});
