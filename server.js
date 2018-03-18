@@ -34,7 +34,7 @@ app.use ((req, res, next) => {
 }); */
 
 
-app.use (express.static (__dirname + '/public'));
+app.use (express.static (__dirname + '/public')); // To include maintance break for public folder also
 // Hbs partials - To load common pages
 hbs.registerPartials (__dirname + '/views/partials');
 
